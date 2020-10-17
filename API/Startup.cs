@@ -32,12 +32,13 @@ namespace API
                 options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
             });
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo {Title = "SnowBlaze1.API", Version = "v1"});
 });
 
-           
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
